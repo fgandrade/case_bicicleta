@@ -43,8 +43,8 @@
 								},
 								"sink": {
 									"name": "BusinessEntityID",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -56,7 +56,7 @@
 								"sink": {
 									"name": "PersonType",
 									"type": "String",
-									"physicalType": "char"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -67,8 +67,8 @@
 								},
 								"sink": {
 									"name": "NameStyle",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -139,8 +139,8 @@
 								},
 								"sink": {
 									"name": "EmailPromotion",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -187,7 +187,8 @@
 								},
 								"sink": {
 									"name": "ModifiedDate",
-									"physicalType": "timestamp"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							}
 						],
@@ -214,7 +215,14 @@
 			{
 				"name": "ProductionProduct",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Person",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -574,7 +582,14 @@
 			{
 				"name": "SalesCustomer",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "SalesOrderDetail",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -718,7 +733,14 @@
 			{
 				"name": "SalesOrderDetail",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "ProductionProduct",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -910,7 +932,14 @@
 			{
 				"name": "SalesOrderHeader",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "SpecialOfferProduct",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -1282,7 +1311,14 @@
 			{
 				"name": "SpecialOfferProduct",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "SalesCustomer",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
