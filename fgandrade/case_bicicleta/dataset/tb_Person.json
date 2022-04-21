@@ -10,17 +10,15 @@
 		"schema": [
 			{
 				"name": "BusinessEntityID",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
 				"name": "PersonType",
-				"type": "char"
+				"type": "varchar"
 			},
 			{
 				"name": "NameStyle",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
 				"name": "Title",
@@ -44,8 +42,7 @@
 			},
 			{
 				"name": "EmailPromotion",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
 				"name": "AdditionalContactInfo",
@@ -61,7 +58,7 @@
 			},
 			{
 				"name": "ModifiedDate",
-				"type": "timestamp"
+				"type": "varchar"
 			}
 		],
 		"typeProperties": {
