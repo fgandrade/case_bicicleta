@@ -1,0 +1,28 @@
+{
+	"name": "SalesCustomer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "casebicicletas",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Sales.Customer.csv",
+				"container": "files"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "CustomerID;PersonID;StoreID;TerritoryID;AccountNumber;rowguid;ModifiedDate",
+				"type": "String"
+			}
+		]
+	}
+}
