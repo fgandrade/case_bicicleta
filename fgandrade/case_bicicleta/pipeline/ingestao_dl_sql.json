@@ -760,15 +760,11 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table tb_salesOrderDetail",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -783,7 +779,7 @@
 								"sink": {
 									"name": "SalesOrderID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -795,7 +791,7 @@
 								"sink": {
 									"name": "SalesOrderDetailID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -807,7 +803,7 @@
 								"sink": {
 									"name": "CarrierTrackingNumber",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -819,7 +815,7 @@
 								"sink": {
 									"name": "OrderQty",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -831,7 +827,7 @@
 								"sink": {
 									"name": "ProductID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -843,7 +839,7 @@
 								"sink": {
 									"name": "SpecialOfferID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -855,7 +851,7 @@
 								"sink": {
 									"name": "UnitPrice",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -867,7 +863,7 @@
 								"sink": {
 									"name": "UnitPriceDiscount",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -879,7 +875,7 @@
 								"sink": {
 									"name": "LineTotal",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -891,7 +887,7 @@
 								"sink": {
 									"name": "rowguid",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -903,7 +899,7 @@
 								"sink": {
 									"name": "ModifiedDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							}
 						],
@@ -922,7 +918,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SalesOrderDetail",
+						"referenceName": "tb_salesOrderDetail",
 						"type": "DatasetReference"
 					}
 				]
