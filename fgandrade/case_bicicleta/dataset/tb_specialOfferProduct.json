@@ -1,0 +1,33 @@
+{
+	"name": "tb_specialOfferProduct",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "bd_rox",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SpecialOfferID",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductID",
+				"type": "varchar"
+			},
+			{
+				"name": "rowguid",
+				"type": "varchar"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tb_specialOfferProduct"
+		}
+	}
+}
