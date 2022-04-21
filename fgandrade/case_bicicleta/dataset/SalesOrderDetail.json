@@ -1,0 +1,28 @@
+{
+	"name": "SalesOrderDetail",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "casebicicletas",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Sales.SalesOrderDetail.csv",
+				"container": "files"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "SalesOrderID;SalesOrderDetailID;CarrierTrackingNumber;OrderQty;ProductID;SpecialOfferID;UnitPrice;UnitPriceDiscount;LineTotal;rowguid;ModifiedDate",
+				"type": "String"
+			}
+		]
+	}
+}
