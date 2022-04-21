@@ -1,0 +1,117 @@
+{
+	"name": "tb_productionProduct",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "bd_rox",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ProductID",
+				"type": "varchar"
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "MakeFlag",
+				"type": "varchar"
+			},
+			{
+				"name": "FinishedGoodsFlag",
+				"type": "varchar"
+			},
+			{
+				"name": "Color",
+				"type": "varchar"
+			},
+			{
+				"name": "SafetyStockLevel",
+				"type": "varchar"
+			},
+			{
+				"name": "ReorderPoint",
+				"type": "varchar"
+			},
+			{
+				"name": "StandardCost",
+				"type": "varchar"
+			},
+			{
+				"name": "ListPrice",
+				"type": "varchar"
+			},
+			{
+				"name": "Size",
+				"type": "varchar"
+			},
+			{
+				"name": "SizeUnitMeasureCode",
+				"type": "varchar"
+			},
+			{
+				"name": "WeightUnitMeasureCode",
+				"type": "varchar"
+			},
+			{
+				"name": "Weight",
+				"type": "varchar"
+			},
+			{
+				"name": "DaysToManufacture",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductLine",
+				"type": "varchar"
+			},
+			{
+				"name": "Class",
+				"type": "varchar"
+			},
+			{
+				"name": "Style",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductSubcategoryID",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductModelID",
+				"type": "varchar"
+			},
+			{
+				"name": "SellStartDate",
+				"type": "varchar"
+			},
+			{
+				"name": "SellEndDate",
+				"type": "varchar"
+			},
+			{
+				"name": "DiscontinuedDate",
+				"type": "varchar"
+			},
+			{
+				"name": "rowguid",
+				"type": "varchar"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tb_productionProduct"
+		}
+	}
+}
