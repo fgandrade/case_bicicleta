@@ -1,0 +1,28 @@
+{
+	"name": "ProductionProduct",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "casebicicletas",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Production.Product.csv",
+				"container": "files"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ProductID;Name;ProductNumber;MakeFlag;FinishedGoodsFlag;Color;SafetyStockLevel;ReorderPoint;StandardCost;ListPrice;Size;SizeUnitMeasureCode;WeightUnitMeasureCode;Weight;DaysToManufacture;ProductLine;Class;Style;ProductSubcategoryID;ProductModelID;SellStartDate;SellEndDate;DiscontinuedDate;rowguid;ModifiedDate",
+				"type": "String"
+			}
+		]
+	}
+}
