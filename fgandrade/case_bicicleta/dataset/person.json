@@ -13,7 +13,7 @@
 				"fileName": "Person.Person.csv",
 				"container": "files"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"quoteChar": "\""
 		},
