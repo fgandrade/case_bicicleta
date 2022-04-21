@@ -1,0 +1,28 @@
+{
+	"name": "SpecialOfferProduct",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "casebicicletas",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Sales.SpecialOfferProduct.csv",
+				"container": "files"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "SpecialOfferID;ProductID;rowguid;ModifiedDate",
+				"type": "String"
+			}
+		]
+	}
+}
