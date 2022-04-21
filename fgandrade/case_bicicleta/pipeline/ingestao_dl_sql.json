@@ -246,15 +246,11 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table dbo.tb_productionProduct",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -269,7 +265,7 @@
 								"sink": {
 									"name": "ProductID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -281,7 +277,7 @@
 								"sink": {
 									"name": "Name",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -293,7 +289,7 @@
 								"sink": {
 									"name": "ProductNumber",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -305,7 +301,7 @@
 								"sink": {
 									"name": "MakeFlag",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -317,7 +313,7 @@
 								"sink": {
 									"name": "FinishedGoodsFlag",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -329,7 +325,7 @@
 								"sink": {
 									"name": "Color",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -341,7 +337,7 @@
 								"sink": {
 									"name": "SafetyStockLevel",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -353,7 +349,7 @@
 								"sink": {
 									"name": "ReorderPoint",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -365,7 +361,7 @@
 								"sink": {
 									"name": "StandardCost",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -377,7 +373,7 @@
 								"sink": {
 									"name": "ListPrice",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -389,7 +385,7 @@
 								"sink": {
 									"name": "Size",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -401,7 +397,7 @@
 								"sink": {
 									"name": "SizeUnitMeasureCode",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -413,7 +409,7 @@
 								"sink": {
 									"name": "WeightUnitMeasureCode",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -425,7 +421,7 @@
 								"sink": {
 									"name": "Weight",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -437,7 +433,7 @@
 								"sink": {
 									"name": "DaysToManufacture",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -449,7 +445,7 @@
 								"sink": {
 									"name": "ProductLine",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -461,7 +457,7 @@
 								"sink": {
 									"name": "Class",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -473,7 +469,7 @@
 								"sink": {
 									"name": "Style",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -485,7 +481,7 @@
 								"sink": {
 									"name": "ProductSubcategoryID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -497,7 +493,7 @@
 								"sink": {
 									"name": "ProductModelID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -509,7 +505,7 @@
 								"sink": {
 									"name": "SellStartDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -521,7 +517,7 @@
 								"sink": {
 									"name": "SellEndDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -533,7 +529,7 @@
 								"sink": {
 									"name": "DiscontinuedDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -545,7 +541,7 @@
 								"sink": {
 									"name": "rowguid",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -557,7 +553,7 @@
 								"sink": {
 									"name": "ModifiedDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							}
 						],
@@ -576,7 +572,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ProductionProduct",
+						"referenceName": "tb_productionProduct",
 						"type": "DatasetReference"
 					}
 				]
