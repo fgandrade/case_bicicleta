@@ -609,15 +609,11 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table tb_salesCustomer",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -632,7 +628,7 @@
 								"sink": {
 									"name": "CustomerID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -644,7 +640,7 @@
 								"sink": {
 									"name": "PersonID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -656,7 +652,7 @@
 								"sink": {
 									"name": "StoreID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -668,7 +664,7 @@
 								"sink": {
 									"name": "TerritoryID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -680,7 +676,7 @@
 								"sink": {
 									"name": "AccountNumber",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -692,7 +688,7 @@
 								"sink": {
 									"name": "rowguid",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -704,7 +700,7 @@
 								"sink": {
 									"name": "ModifiedDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							}
 						],
@@ -723,7 +719,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SalesCustomer",
+						"referenceName": "tb_salesCustomer",
 						"type": "DatasetReference"
 					}
 				]
