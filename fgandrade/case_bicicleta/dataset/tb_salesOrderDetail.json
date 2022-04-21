@@ -1,0 +1,61 @@
+{
+	"name": "tb_salesOrderDetail",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "bd_rox",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SalesOrderID",
+				"type": "varchar"
+			},
+			{
+				"name": "SalesOrderDetailID",
+				"type": "varchar"
+			},
+			{
+				"name": "CarrierTrackingNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "OrderQty",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductID",
+				"type": "varchar"
+			},
+			{
+				"name": "SpecialOfferID",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitPrice",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitPriceDiscount",
+				"type": "varchar"
+			},
+			{
+				"name": "LineTotal",
+				"type": "varchar"
+			},
+			{
+				"name": "rowguid",
+				"type": "varchar"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tb_salesOrderDetail"
+		}
+	}
+}
