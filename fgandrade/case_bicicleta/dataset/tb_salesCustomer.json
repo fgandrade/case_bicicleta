@@ -1,0 +1,45 @@
+{
+	"name": "tb_salesCustomer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "bd_rox",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CustomerID",
+				"type": "varchar"
+			},
+			{
+				"name": "PersonID",
+				"type": "varchar"
+			},
+			{
+				"name": "StoreID",
+				"type": "varchar"
+			},
+			{
+				"name": "TerritoryID",
+				"type": "varchar"
+			},
+			{
+				"name": "AccountNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "rowguid",
+				"type": "varchar"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tb_salesCustomer"
+		}
+	}
+}
