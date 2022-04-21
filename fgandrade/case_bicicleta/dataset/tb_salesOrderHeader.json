@@ -1,0 +1,121 @@
+{
+	"name": "tb_salesOrderHeader",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "bd_rox",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SalesOrderID",
+				"type": "varchar"
+			},
+			{
+				"name": "RevisionNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "OrderDate",
+				"type": "varchar"
+			},
+			{
+				"name": "DueDate",
+				"type": "varchar"
+			},
+			{
+				"name": "ShipDate",
+				"type": "varchar"
+			},
+			{
+				"name": "Status",
+				"type": "varchar"
+			},
+			{
+				"name": "OnlineOrderFlag",
+				"type": "varchar"
+			},
+			{
+				"name": "SalesOrderNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "PurchaseOrderNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "AccountNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "CustomerID",
+				"type": "varchar"
+			},
+			{
+				"name": "SalesPersonID",
+				"type": "varchar"
+			},
+			{
+				"name": "TerritoryID",
+				"type": "varchar"
+			},
+			{
+				"name": "BillToAddressID",
+				"type": "varchar"
+			},
+			{
+				"name": "ShipToAddressID",
+				"type": "varchar"
+			},
+			{
+				"name": "ShipMethodID",
+				"type": "varchar"
+			},
+			{
+				"name": "CreditCardID",
+				"type": "varchar"
+			},
+			{
+				"name": "CreditCardApprovalCode",
+				"type": "varchar"
+			},
+			{
+				"name": "CurrencyRateID",
+				"type": "varchar"
+			},
+			{
+				"name": "SubTotal",
+				"type": "varchar"
+			},
+			{
+				"name": "TaxAmt",
+				"type": "varchar"
+			},
+			{
+				"name": "Freight",
+				"type": "varchar"
+			},
+			{
+				"name": "TotalDue",
+				"type": "varchar"
+			},
+			{
+				"name": "Comment",
+				"type": "varchar"
+			},
+			{
+				"name": "rowguid",
+				"type": "varchar"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tb_salesOrderHeader"
+		}
+	}
+}
