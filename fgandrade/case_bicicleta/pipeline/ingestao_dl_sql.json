@@ -951,15 +951,11 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table tb_salesOrderHeader",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -974,7 +970,7 @@
 								"sink": {
 									"name": "SalesOrderID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -986,7 +982,7 @@
 								"sink": {
 									"name": "RevisionNumber",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -998,7 +994,7 @@
 								"sink": {
 									"name": "OrderDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1010,7 +1006,7 @@
 								"sink": {
 									"name": "DueDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1022,7 +1018,7 @@
 								"sink": {
 									"name": "ShipDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1034,7 +1030,7 @@
 								"sink": {
 									"name": "Status",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1046,7 +1042,7 @@
 								"sink": {
 									"name": "OnlineOrderFlag",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1058,7 +1054,7 @@
 								"sink": {
 									"name": "SalesOrderNumber",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1070,7 +1066,7 @@
 								"sink": {
 									"name": "PurchaseOrderNumber",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1082,7 +1078,7 @@
 								"sink": {
 									"name": "AccountNumber",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1094,7 +1090,7 @@
 								"sink": {
 									"name": "CustomerID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1106,7 +1102,7 @@
 								"sink": {
 									"name": "SalesPersonID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1118,7 +1114,7 @@
 								"sink": {
 									"name": "TerritoryID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1130,7 +1126,7 @@
 								"sink": {
 									"name": "BillToAddressID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1142,7 +1138,7 @@
 								"sink": {
 									"name": "ShipToAddressID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1154,7 +1150,7 @@
 								"sink": {
 									"name": "ShipMethodID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1166,7 +1162,7 @@
 								"sink": {
 									"name": "CreditCardID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1178,7 +1174,7 @@
 								"sink": {
 									"name": "CreditCardApprovalCode",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1190,7 +1186,7 @@
 								"sink": {
 									"name": "CurrencyRateID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1202,7 +1198,7 @@
 								"sink": {
 									"name": "SubTotal",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1214,7 +1210,7 @@
 								"sink": {
 									"name": "TaxAmt",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1226,7 +1222,7 @@
 								"sink": {
 									"name": "Freight",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1238,7 +1234,7 @@
 								"sink": {
 									"name": "TotalDue",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1250,7 +1246,7 @@
 								"sink": {
 									"name": "Comment",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1262,7 +1258,7 @@
 								"sink": {
 									"name": "rowguid",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1274,7 +1270,7 @@
 								"sink": {
 									"name": "ModifiedDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							}
 						],
@@ -1293,7 +1289,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SalesOrderHeader",
+						"referenceName": "tb_salesOrderHeader",
 						"type": "DatasetReference"
 					}
 				]
