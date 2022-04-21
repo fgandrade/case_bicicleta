@@ -1330,15 +1330,11 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table tb_specialOfferProduct",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -1353,7 +1349,7 @@
 								"sink": {
 									"name": "SpecialOfferID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1365,7 +1361,7 @@
 								"sink": {
 									"name": "ProductID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1377,7 +1373,7 @@
 								"sink": {
 									"name": "rowguid",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -1389,7 +1385,7 @@
 								"sink": {
 									"name": "ModifiedDate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							}
 						],
@@ -1408,7 +1404,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SpecialOfferProduct",
+						"referenceName": "tb_specialOfferProduct",
 						"type": "DatasetReference"
 					}
 				]
