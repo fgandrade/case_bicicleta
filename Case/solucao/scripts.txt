@@ -1,0 +1,41 @@
+1-
+SELECT SalesOrderID, COUNT(*) AS QTD_LINHAS FROM dbo.tb_salesOrderDetail
+GROUP BY SalesOrderID
+
+2-
+SELECT TOP(3) pp.Name, pp.DaysToManufacture,sum(cast(sod.OrderQty as int)) as total_vendidos
+FROM dbo.tb_salesOrderDetail sod
+INNER JOIN dbo.tb_specialOfferProduct sop  
+ON sod.SpecialOfferID = sop.SpecialOfferID
+INNER JOIN dbo.tb_productionProduct pp
+ON sop.ProductID = pp.ProductID
+group by pp.DaysToManufacture, pp.Name
+order by total_vendidos desc
+
+3-
+SELECT CONCAT(p.FirstName, ' ', p.MiddleName, ' ', p.LastName) AS FullName, 
+COUNT(soh.SalesOrderID) AS PedidosEfetuados
+FROM [dbo].[tb_person] p
+INNER JOIN [dbo].[tb_salesCustomer] sc
+ON p.BusinessEntityID = sc.PersonID
+INNER JOIN [dbo].[tb_salesOrderHeader] soh
+ON soh.CustomerID = sc.CustomerID
+GROUP BY CONCAT(p.FirstName, ' ', p.MiddleName, ' ', p.LastName)
+
+4-
+SELECT PP.ProductID, soh.OrderDate, sum(cast(sod.OrderQty as int)) as total_vendidos
+FROM [dbo].[tb_salesOrderHeader] soh
+INNER JOIN [dbo].[tb_salesOrderDetail] sod
+ON sod.SalesOrderID = soh.SalesOrderID
+INNER JOIN dbo.tb_specialOfferProduct sop  
+ON sod.SpecialOfferID = sop.SpecialOfferID
+INNER JOIN [dbo].[tb_productionProduct] pp
+ON sop.ProductID = pp.ProductID
+GROUP BY PP.ProductID, soh.OrderDate
+
+5-
+SELECT SalesOrderID, OrderDate, TotalDue 
+FROM dbo.tb_salesOrderHeader
+WHERE CAST(OrderDate AS DATE) BETWEEN '2011-09-01' AND '2011-09-30'
+AND CAST(REPLACE(TotalDue, ',', '.') AS FLOAT) > 1000
+ORDER BY CAST(REPLACE(TotalDue, ',', '.') AS FLOAT) DESC

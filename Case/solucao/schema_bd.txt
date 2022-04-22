@@ -1,0 +1,118 @@
+## CRIEI TODAS COLUNAS COMO VARCHAR TAMANHO MÁXIMO POIS EM ALGUMAS INGESTÕES FORAM RETORNANDO ERRO DE INCOMPATIBILIDADE DE TIPO DE DADOS E DE TAMANHO 
+
+
+CREATE TABLE dbo.tb_person
+(
+	BusinessEntityID varchar(max),
+	PersonType varchar(max),
+	NameStyle varchar(max),
+	Title varchar(max),
+	FirstName varchar(max),
+	MiddleName varchar(max),
+	LastName varchar(max),
+	Suffix varchar(max),
+	EmailPromotion varchar(max),
+	AdditionalContactInfo varchar(max),
+	Demographics varchar(max),
+	rowguid varchar(max),
+	ModifiedDate varchar(max)
+)
+
+
+CREATE TABLE dbo.tb_productionProduct
+(
+	ProductID varchar(max),	
+	Name varchar(max),	
+	ProductNumber varchar(max),	
+	MakeFlag varchar(max),	
+	FinishedGoodsFlag varchar(max),	
+	Color varchar(max),	
+	SafetyStockLevel varchar(max),	
+	ReorderPoint varchar(max),	
+	StandardCost varchar(max),
+	ListPrice varchar(max),	
+	Size varchar(max),	
+	SizeUnitMeasureCode varchar(max),	
+	WeightUnitMeasureCode varchar(max),	
+	Weight varchar(max),
+	DaysToManufacture varchar(max),
+	ProductLine varchar(max),	
+	Class varchar(max),	
+	Style varchar(max),	
+	ProductSubcategoryID varchar(max),	
+	ProductModelID varchar(max),	
+	SellStartDate varchar(max),	
+	SellEndDate varchar(max),	
+	DiscontinuedDate varchar(max),	
+	rowguid varchar(max),	
+	ModifiedDate varchar(max)
+)
+
+
+CREATE TABLE tb_salesOrderDetail
+(
+	SalesOrderID varchar(max),
+	SalesOrderDetailID varchar(max),
+	CarrierTrackingNumber varchar(max),
+	OrderQty varchar(max),
+	ProductID varchar(max),
+	SpecialOfferID varchar(max),
+	UnitPrice varchar(max),
+	UnitPriceDiscount varchar(max),
+	LineTotal varchar(max),
+	rowguid varchar(max),
+	ModifiedDate varchar(max)
+)
+
+
+CREATE TABLE tb_salesCustomer
+(
+	CustomerID varchar(max),
+	PersonID varchar(max),
+	StoreID varchar(max),
+	TerritoryID varchar(max),
+	AccountNumber varchar(max),
+	rowguid varchar(max),
+	ModifiedDate varchar(max)
+)
+
+
+CREATE TABLE tb_specialOfferProduct
+(
+	SpecialOfferID varchar(max),
+	ProductID varchar(max),
+	rowguid varchar(max),
+	ModifiedDate varchar(max)
+
+)
+
+
+CREATE TABLE tb_salesOrderHeader
+(
+	SalesOrderID varchar(max),
+	RevisionNumber varchar(max),
+	OrderDate varchar(max),	
+	DueDate varchar(max),
+	ShipDate varchar(max),
+	Status varchar(max),
+	OnlineOrderFlag varchar(max),
+	SalesOrderNumber varchar(max),
+	PurchaseOrderNumber varchar(max),
+	AccountNumber varchar(max),
+	CustomerID varchar(max),
+	SalesPersonID varchar(max),
+	TerritoryID varchar(max),
+	BillToAddressID varchar(max),
+	ShipToAddressID varchar(max),
+	ShipMethodID varchar(max),
+	CreditCardID varchar(max),
+	CreditCardApprovalCode varchar(max),
+	CurrencyRateID varchar(max),
+	SubTotal varchar(max),
+	TaxAmt varchar(max),
+	Freight varchar(max),
+	TotalDue varchar(max),
+	Comment varchar(max),
+	rowguid varchar(max),
+	ModifiedDate varchar(max)
+)
